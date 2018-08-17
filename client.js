@@ -73,3 +73,9 @@ socket.on("close", function() {
   console.clear();
   process.exit(0);
 });
+
+
+socket.on('error', (err) => {
+  console.log('Could not connect to Redis at 127.0.0.1:6379: Connection refused')
+  process.exit(0)
+})
